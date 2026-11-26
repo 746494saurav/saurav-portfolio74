@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en" class="bg-[#0C0C0C]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saurav Prajapati — Full Stack Developer &amp; PHP Laravel</title>
+    <meta
+      name="description"
+      content="Portfolio of Saurav Prajapati — Full Stack Developer specializing in PHP, Laravel, RESTful APIs, MySQL, and modern responsive web applications."
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D7E2EA'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>"
+    />
+    <!-- Google Fonts: Kanit (weights 300 to 900) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              kanit: ['Kanit', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      (function () {
+        var saved = localStorage.getItem('portfolio-theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-[#0C0C0C] text-[#D7E2EA] font-kanit antialiased selection:bg-purple-600/30 selection:text-white">
+    <div id="app" class="bg-[#0C0C0C] min-h-screen" style="overflow-x: clip;">
+      <!-- Ambient Floating PHP & Laravel Keywords Layer (Behind Content) -->
+      <div id="ambient-keyword-layer" class="fixed inset-0 pointer-events-none overflow-hidden z-[1]" aria-hidden="true"></div>
+      <!-- =========================================================
+           HERO SECTION
+      ========================================================== -->
+      <main>
+        <section class="relative min-h-[100svh] sm:h-screen sm:min-h-[660px] flex flex-col justify-between gap-4 sm:gap-0 overflow-x-clip bg-[#0C0C0C]">
+          <!-- Top Navigation -->
+          <header class="w-full z-30 reveal-el" style="--reveal-y: -20px; --reveal-delay: 0s;">
+            <nav class="flex flex-wrap justify-between items-center gap-x-3 gap-y-2 px-4 sm:px-6 md:px-10 pt-4 sm:pt-6 md:pt-8 w-full">
+              <a href="#about" class="text-[#D7E2EA] font-medium uppercase tracking-wider text-[11px] sm:text-base md:text-lg hover:text-purple-400 hover:opacity-100 opacity-80 transition-all duration-200">About</a>
+              <a href="#skills" class="text-[#D7E2EA] font-medium uppercase tracking-wider text-[11px] sm:text-base md:text-lg hover:text-purple-400 hover:opacity-100 opacity-80 transition-all duration-200">Skills</a>
+              <a href="#experience" class="text-[#D7E2EA] font-medium uppercase tracking-wider text-[11px] sm:text-base md:text-lg hover:text-purple-400 hover:opacity-100 opacity-80 transition-all duration-200">Experience</a>
+              <a href="#projects" class="text-[#D7E2EA] font-medium uppercase tracking-wider text-[11px] sm:text-base md:text-lg hover:text-purple-400 hover:opacity-100 opacity-80 transition-all duration-200">Projects</a>
+              <a href="#contact" class="text-[#D7E2EA] font-medium uppercase tracking-wider text-[11px] sm:text-base md:text-lg hover:text-purple-400 hover:opacity-100 opacity-80 transition-all duration-200">Contact</a>
+              <button
+                id="theme-toggle-btn"
+                type="button"
+                aria-label="Toggle Light and Dark Mode"
+                class="theme-toggle-btn flex items-center gap-1 sm:gap-1.5 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 text-[10px] sm:text-xs font-mono uppercase tracking-wider text-[#D7E2EA] transition-all cursor-pointer select-none"
+              >
+                <svg id="theme-icon-sun" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                <svg id="theme-icon-moon" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-purple-600 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                <span id="theme-toggle-label">Light</span>
+              </button>
+            </nav>
+          </header>
+
+          <!-- Giant Hero Heading -->
+          <div class="overflow-hidden w-full flex items-center justify-center relative z-[5] px-2 sm:px-0">
+            <div class="w-full flex justify-center reveal-el" style="--reveal-y: 40px; --reveal-delay: 0.12s;">
+              <h1 class="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-center text-[11.5vw] sm:text-[12vw] md:text-[13vw] lg:text-[14vw] mt-2 sm:mt-2 md:-mt-6 select-none pointer-events-none">
+                Hi, i'm saurav
+              </h1>
+            </div>
+          </div>
+
+          <!-- Centerpiece Developer Portrait with Magnetic Parallax -->
+          <div class="relative sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:bottom-0 mx-auto z-10 w-[235px] sm:w-[370px] md:w-[440px] lg:w-[490px] -mb-4 sm:mb-0 flex justify-center items-end pointer-events-auto">
+            <div class="w-full flex justify-center items-end reveal-el" style="--reveal-y: 30px; --reveal-delay: 0.45s;">
+              <div id="hero-magnet" class="w-full flex justify-center" style="will-change: transform; transition: transform 0.6s ease-in-out;">
+                <div class="relative w-full flex justify-center items-end">
+                  <img
+                    src="images/saurav-prajapati.jpg"
+                    alt="Saurav Prajapati - Full Stack & PHP Laravel Developer"
+                    draggable="false"
+                    loading="eager"
+                    class="hero-portrait-mask w-full h-auto max-h-[40vh] sm:max-h-[66vh] object-contain object-bottom select-none drop-shadow-[0_20px_50px_rgba(0,0,0,0.85)]"
+                  />
+                  <div class="hero-bottom-fade absolute -bottom-1 left-0 right-0 h-14 sm:h-16 bg-gradient-to-t from-[#0C0C0C] via-[#0C0C0C]/80 to-transparent pointer-events-none"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Hero Row -->
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 sm:gap-5 px-4 sm:px-6 md:px-10 pb-6 sm:pb-8 md:pb-10 w-full z-20 relative">
+            <div class="reveal-el" style="--reveal-y: 20px; --reveal-delay: 0.3s;">
+              <div class="flex flex-col gap-1.5 max-w-full sm:max-w-[390px] md:max-w-[450px]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                  <span class="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold">
+                    Saurav Prajapati • Full Stack &amp; PHP Laravel
+                  </span>
+                </div>
+                <p class="text-white font-medium text-xs sm:text-sm md:text-base leading-snug">
+                  Backend &amp; Full Stack Developer with 2+ years of experience building scalable PHP, Laravel, and Node.js web applications and REST APIs.
+                </p>
+                <p class="text-[#D7E2EA]/70 font-light text-[11px] sm:text-xs leading-relaxed hidden sm:block">
+                  Focused on performance, security, clean MVC architecture, MySQL database design, admin panels, and responsive interactive interfaces.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 w-full sm:w-auto justify-start sm:justify-end reveal-el" style="--reveal-y: 20px; --reveal-delay: 0.42s;">
+              <a href="#projects" class="no-underline">
+                <button
+                  type="button"
+                  class="pill-outline-btn rounded-full border border-white/20 hover:border-purple-400/60 text-[#D7E2EA] hover:text-white font-medium uppercase tracking-wider px-4 py-2.5 sm:px-7 sm:py-3.5 text-[11px] sm:text-sm bg-white/5 hover:bg-white/10 flex items-center gap-2 cursor-pointer select-none"
+                >
+                  <span>Explore My Work</span>
+                  <svg class="w-3.5 h-3.5 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 5v14"></path>
+                    <path d="m19 12-7 7-7-7"></path>
+                  </svg>
+                </button>
+              </a>
+              <a href="#contact" class="inline-block no-underline">
+                <button
+                  type="button"
+                  class="cta-gradient-btn rounded-full px-6 py-2.5 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-[11px] sm:text-sm md:text-base text-white font-medium uppercase tracking-widest cursor-pointer select-none"
+                >
+                  Contact Me
+                </button>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================================================
+             DUAL-ROW SCROLL-DRIVEN PROJECT MARQUEE
+        ========================================================== -->
+        <section id="marquee-showcase" class="bg-[#0C0C0C] pt-12 sm:pt-32 md:pt-40 pb-8 sm:pb-10 overflow-hidden select-none">
+          <div class="relative z-10 flex flex-col gap-3 sm:gap-4">
+            <div id="marquee-row-1" class="flex gap-3 sm:gap-4 -ml-[420px] sm:-ml-[1400px]" style="will-change: transform; transition: transform 0.05s linear;"></div>
+            <div id="marquee-row-2" class="flex gap-3 sm:gap-4 -ml-[220px] sm:-ml-[500px]" style="will-change: transform; transition: transform 0.05s linear;"></div>
+          </div>
+        </section>
+      </main>
+
+      <!-- =========================================================
+           MAIN BODY WRAPPER
+      ========================================================== -->
+      <div id="journey-container" class="relative">
+        <!-- =========================================================
+             ABOUT & SKILLS SECTION
+        ========================================================== -->
+        <section id="about" class="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-10 py-14 sm:py-20 bg-[#0C0C0C] overflow-hidden">
+          <!-- Decorative Corner Objects (SVG 3D-inspired) -->
+          <div class="absolute top-[2%] sm:top-[4%] left-[1%] sm:left-[2%] md:left-[4%] pointer-events-none z-10 opacity-25 sm:opacity-60 animate-float-slow">
+            <svg class="w-[64px] sm:w-[145px] md:w-[190px] h-auto drop-shadow-xl" viewBox="0 0 180 180" fill="none">
+              <defs>
+                <radialGradient id="orb1" cx="35%" cy="30%" r="70%">
+                  <stop offset="0%" stop-color="#e9d5ff" />
+                  <stop offset="45%" stop-color="#9333ea" />
+                  <stop offset="100%" stop-color="#18011f" />
+                </radialGradient>
+              </defs>
+              <circle cx="90" cy="90" r="62" fill="url(#orb1)" />
+              <ellipse cx="90" cy="90" rx="82" ry="22" stroke="#d7e2ea" stroke-opacity="0.35" stroke-width="2" transform="rotate(-22 90 90)" />
+            </svg>
+          </div>
+
+          <div class="absolute bottom-[3%] sm:bottom-[8%] left-[2%] sm:left-[6%] md:left-[10%] pointer-events-none z-10 opacity-25 sm:opacity-60 animate-float-delay">
+            <svg class="w-[56px] sm:w-[125px] md:w-[165px] h-auto drop-shadow-xl" viewBox="0 0 160 160" fill="none">
+              <defs>
+                <linearGradient id="cube1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#d7e2ea" stop-opacity="0.7" />
+                  <stop offset="100%" stop-color="#7e22ce" stop-opacity="0.4" />
+                </linearGradient>
+              </defs>
+              <polygon points="80,16 140,48 140,112 80,144 20,112 20,48" fill="#17171d" stroke="url(#cube1)" stroke-width="2.5" />
+              <polyline points="20,48 80,80 140,48" stroke="#c084fc" stroke-opacity="0.55" stroke-width="2" />
+              <line x1="80" y1="80" x2="80" y2="144" stroke="#c084fc" stroke-opacity="0.55" stroke-width="2" />
+            </svg>
+          </div>
+
+          <div class="absolute top-[2%] sm:top-[4%] right-[1%] sm:right-[2%] md:right-[4%] pointer-events-none z-10 opacity-25 sm:opacity-60 animate-float-delay">
+            <svg class="w-[64px] sm:w-[145px] md:w-[190px] h-auto drop-shadow-xl" viewBox="0 0 180 180" fill="none">
+              <rect x="42" y="42" width="96" height="96" rx="22" fill="#18181f" stroke="#a855f7" stroke-opacity="0.5" stroke-width="2.5" transform="rotate(18 90 90)" />
+              <text x="90" y="99" text-anchor="middle" fill="#e9d5ff" font-family="monospace" font-size="26" font-weight="700">&lt;/&gt;</text>
+            </svg>
+          </div>
+
+          <div class="absolute bottom-[3%] sm:bottom-[8%] right-[2%] sm:right-[6%] md:right-[10%] pointer-events-none z-10 opacity-25 sm:opacity-60 animate-float-slow">
+            <svg class="w-[64px] sm:w-[150px] md:w-[195px] h-auto drop-shadow-xl" viewBox="0 0 180 180" fill="none">
+              <path d="M90 22 L152 134 L28 134 Z" fill="#15151b" stroke="#f97316" stroke-opacity="0.45" stroke-width="2.5" />
+              <circle cx="90" cy="96" r="22" fill="#a855f7" fill-opacity="0.28" stroke="#d7e2ea" stroke-opacity="0.4" stroke-width="1.5" />
+            </svg>
+          </div>
+
+          <!-- Center Content -->
+          <div class="flex flex-col items-center w-full max-w-5xl z-20">
+            <div class="w-full text-center reveal-el" style="--reveal-y: 40px;">
+              <h2 class="hero-heading font-black uppercase leading-none tracking-tight text-center text-[clamp(3rem,12vw,160px)]">
+                About me
+              </h2>
+            </div>
+
+            <div class="h-10 sm:h-12 md:h-14"></div>
+
+            <!-- Scroll-Driven Character Reveal Bio -->
+            <div class="max-w-[760px] text-center px-4 space-y-4">
+              <p
+                id="about-reveal-text"
+                class="text-[#D7E2EA] font-medium text-center leading-relaxed text-[clamp(0.95rem,1.6vw,1.2rem)]"
+                data-text="Backend Developer with 2+ years of professional experience specializing in PHP, Laravel, and Node.js. I build scalable web applications, REST APIs, admin panels, and database-driven systems focused on performance, security, and maintainability. My technical expertise includes PHP, Laravel, MySQL, JavaScript, jQuery, AJAX, Blade, API integrations, and responsive web development."
+              ></p>
+              <p class="text-[#D7E2EA]/80 font-light text-center leading-relaxed text-xs sm:text-sm md:text-base reveal-el" style="--reveal-y: 20px; --reveal-delay: 0.1s;">
+                I have hands-on experience developing authentication systems, role &amp; permission management, CRUD modules, dashboards, form validations, and optimized database structures. I focus on writing clean and maintainable code while following Laravel best practices and efficient backend architecture, improving user experience through responsive and interactive interfaces while continuously exploring new technologies.
+              </p>
+            </div>
+
+            <div class="h-12 sm:h-16" id="skills"></div>
+
+            <!-- Core Technical Expertise Grid -->
+            <div class="w-full max-w-4xl reveal-el" style="--reveal-y: 30px; --reveal-delay: 0.12s;">
+              <div class="flex flex-col items-center gap-6">
+                <span class="text-xs uppercase font-mono tracking-widest text-purple-400 font-semibold">
+                  // Tech Stack &amp; Core Expertise
+                </span>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full">
+                  <div class="p-4 sm:p-5 rounded-2xl border border-white/10 bg-[#121212]/80 backdrop-blur-md flex flex-col gap-3 hover:border-purple-500/40 transition-colors">
+                    <span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold">Backend Stack</span>
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">PHP</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">Laravel</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">Node.js</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">REST APIs</span>
+                    </div>
+                  </div>
+
+                  <div class="p-4 sm:p-5 rounded-2xl border border-white/10 bg-[#121212]/80 backdrop-blur-md flex flex-col gap-3 hover:border-purple-500/40 transition-colors">
+                    <span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold">Frontend &amp; Templating</span>
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">Blade</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">JavaScript</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">jQuery &amp; AJAX</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">Responsive Web</span>
+                    </div>
+                  </div>
+
+                  <div class="p-4 sm:p-5 rounded-2xl border border-white/10 bg-[#121212]/80 backdrop-blur-md flex flex-col gap-3 hover:border-purple-500/40 transition-colors">
+                    <span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold">Database &amp; Data</span>
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">MySQL</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">Eloquent ORM</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">Schema Design</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">Query Optimization</span>
+                    </div>
+                  </div>
+
+                  <div class="p-4 sm:p-5 rounded-2xl border border-white/10 bg-[#121212]/80 backdrop-blur-md flex flex-col gap-3 hover:border-purple-500/40 transition-colors">
+                    <span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold">Security &amp; Auth</span>
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">Authentication</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">Role &amp; Permission</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">Form Validation</span>
+                    </div>
+                  </div>
+
+                  <div class="p-4 sm:p-5 rounded-2xl border border-white/10 bg-[#121212]/80 backdrop-blur-md flex flex-col gap-3 hover:border-purple-500/40 transition-colors">
+                    <span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold">Systems &amp; Modules</span>
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">Admin Panels</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">CRUD Modules</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">Dashboards</span>
+                    </div>
+                  </div>
+
+                  <div class="p-4 sm:p-5 rounded-2xl border border-white/10 bg-[#121212]/80 backdrop-blur-md flex flex-col gap-3 hover:border-purple-500/40 transition-colors">
+                    <span class="text-xs font-mono uppercase tracking-widest text-purple-400 font-semibold">Integrations &amp; Tools</span>
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">API Integrations</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">Git &amp; GitHub</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">Postman</span>
+                      <span class="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-xs text-[#D7E2EA] font-light">Composer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="h-12 sm:h-16"></div>
+
+            <div class="reveal-el" style="--reveal-y: 30px; --reveal-delay: 0.2s;">
+              <a href="#projects" class="inline-block no-underline">
+                <button
+                  type="button"
+                  class="pill-outline-btn group rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 text-xs sm:text-sm hover:bg-[#D7E2EA]/10 transition-colors duration-200 flex items-center gap-2 cursor-pointer select-none"
+                >
+                  <span>View My Projects</span>
+                  <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-y-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 5v14"></path>
+                    <path d="m19 12-7 7-7-7"></path>
+                  </svg>
+                </button>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================================================
+             WHAT I DO (HIGH-CONTRAST WHITE SECTION)
+        ========================================================== -->
+        <section id="services" class="bg-[#FFFFFF] text-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 relative">
+          <div class="relative z-10 max-w-5xl mx-auto w-full">
+            <div class="w-full text-center reveal-el" style="--reveal-y: 30px;">
+              <h2 class="text-[#0C0C0C] font-black uppercase text-center leading-none text-[clamp(2.5rem,10vw,140px)] mb-16 sm:mb-20 md:mb-28">
+                What I Do
+              </h2>
+            </div>
+
+            <div class="border-t border-[#0C0C0C]/15">
+              <!-- Service 01 -->
+              <div class="border-b border-[#0C0C0C]/15 py-8 sm:py-10 md:py-12 group transition-colors duration-300 reveal-el" style="--reveal-y: 30px; --reveal-delay: 0s;">
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 sm:gap-8 md:gap-14">
+                  <div class="font-black leading-none text-[#0C0C0C] text-[clamp(3rem,10vw,140px)] shrink-0 select-none group-hover:translate-x-2 transition-transform duration-300">01</div>
+                  <div class="flex flex-col flex-1 justify-center pt-2 sm:pt-4 md:pt-6">
+                    <h3 class="font-medium uppercase text-[#0C0C0C] text-[clamp(1rem,2.2vw,2.1rem)] mb-2 md:mb-3">PHP, Laravel &amp; Node.js Backend</h3>
+                    <p class="font-light leading-relaxed max-w-2xl text-[#0C0C0C] opacity-70 text-[clamp(0.85rem,1.6vw,1.25rem)]">
+                      Architect scalable, secure, and maintainable server-side applications following Laravel best practices, MVC architecture, and clean Node.js services.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Service 02 -->
+              <div class="border-b border-[#0C0C0C]/15 py-8 sm:py-10 md:py-12 group transition-colors duration-300 reveal-el" style="--reveal-y: 30px; --reveal-delay: 0.08s;">
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 sm:gap-8 md:gap-14">
+                  <div class="font-black leading-none text-[#0C0C0C] text-[clamp(3rem,10vw,140px)] shrink-0 select-none group-hover:translate-x-2 transition-transform duration-300">02</div>
+                  <div class="flex flex-col flex-1 justify-center pt-2 sm:pt-4 md:pt-6">
+                    <h3 class="font-medium uppercase text-[#0C0C0C] text-[clamp(1rem,2.2vw,2.1rem)] mb-2 md:mb-3">REST APIs &amp; Third-Party Integrations</h3>
+                    <p class="font-light leading-relaxed max-w-2xl text-[#0C0C0C] opacity-70 text-[clamp(0.85rem,1.6vw,1.25rem)]">
+                      Build reliable RESTful APIs with authentication, token security, structured JSON responses, and seamless external API integrations for web and mobile clients.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Service 03 -->
+              <div class="border-b border-[#0C0C0C]/15 py-8 sm:py-10 md:py-12 group transition-colors duration-300 reveal-el" style="--reveal-y: 30px; --reveal-delay: 0.16s;">
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 sm:gap-8 md:gap-14">
+                  <div class="font-black leading-none text-[#0C0C0C] text-[clamp(3rem,10vw,140px)] shrink-0 select-none group-hover:translate-x-2 transition-transform duration-300">03</div>
+                  <div class="flex flex-col flex-1 justify-center pt-2 sm:pt-4 md:pt-6">
+                    <h3 class="font-medium uppercase text-[#0C0C0C] text-[clamp(1rem,2.2vw,2.1rem)] mb-2 md:mb-3">Admin Panels, Auth &amp; CRUD Systems</h3>
+                    <p class="font-light leading-relaxed max-w-2xl text-[#0C0C0C] opacity-70 text-[clamp(0.85rem,1.6vw,1.25rem)]">
+                      Develop full-featured admin dashboards, role &amp; permission management, authentication systems, robust form validations, and dynamic CRUD modules.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Service 04 -->
+              <div class="border-b border-[#0C0C0C]/15 py-8 sm:py-10 md:py-12 group transition-colors duration-300 reveal-el" style="--reveal-y: 30px; --reveal-delay: 0.24s;">
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 sm:gap-8 md:gap-14">
+                  <div class="font-black leading-none text-[#0C0C0C] text-[clamp(3rem,10vw,140px)] shrink-0 select-none group-hover:translate-x-2 transition-transform duration-300">04</div>
+                  <div class="flex flex-col flex-1 justify-center pt-2 sm:pt-4 md:pt-6">
+                    <h3 class="font-medium uppercase text-[#0C0C0C] text-[clamp(1rem,2.2vw,2.1rem)] mb-2 md:mb-3">MySQL Database Architecture</h3>
+                    <p class="font-light leading-relaxed max-w-2xl text-[#0C0C0C] opacity-70 text-[clamp(0.85rem,1.6vw,1.25rem)]">
+                      Design optimized relational MySQL database structures, indexing strategies, and Eloquent queries built for high performance and data integrity.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Service 05 -->
+              <div class="border-b border-[#0C0C0C]/15 py-8 sm:py-10 md:py-12 group transition-colors duration-300 reveal-el" style="--reveal-y: 30px; --reveal-delay: 0.32s;">
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 sm:gap-8 md:gap-14">
+                  <div class="font-black leading-none text-[#0C0C0C] text-[clamp(3rem,10vw,140px)] shrink-0 select-none group-hover:translate-x-2 transition-transform duration-300">05</div>
+                  <div class="flex flex-col flex-1 justify-center pt-2 sm:pt-4 md:pt-6">
+                    <h3 class="font-medium uppercase text-[#0C0C0C] text-[clamp(1rem,2.2vw,2.1rem)] mb-2 md:mb-3">Responsive Blade, JS &amp; AJAX UI</h3>
+                    <p class="font-light leading-relaxed max-w-2xl text-[#0C0C0C] opacity-70 text-[clamp(0.85rem,1.6vw,1.25rem)]">
+                      Craft responsive, interactive interfaces using Laravel Blade, JavaScript, jQuery, and AJAX for smooth, real-time user experiences without full page reloads.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================================================
+             EXPERIENCE SECTION
+        ========================================================== -->
+        <section id="experience" class="bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-28 relative border-t border-white/10">
+          <div class="relative z-10 max-w-5xl mx-auto w-full">
+            <div class="w-full text-center mb-16 sm:mb-20 reveal-el" style="--reveal-y: 30px;">
+              <div class="flex flex-col items-center gap-2">
+                <span class="text-xs uppercase font-mono tracking-widest text-purple-400 font-semibold">// 2+ Years Professional Experience</span>
+                <h2 class="hero-heading font-black uppercase text-center leading-none tracking-tight text-[clamp(2.5rem,10vw,140px)]">
+                  Experience
+                </h2>
+              </div>
+            </div>
+
+            <div class="relative border-l border-white/15 ml-3 sm:ml-6 md:ml-8 pl-6 sm:pl-10 space-y-12">
+              <!-- Experience 01 -->
+              <div class="relative reveal-el" style="--reveal-y: 30px; --reveal-delay: 0s;">
+                <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-[#0C0C0C] border-2 border-purple-500 flex items-center justify-center">
+                  <span class="w-2 h-2 rounded-full bg-purple-400 animate-ping"></span>
+                </div>
+                <div class="rounded-3xl border border-white/10 bg-[#121212]/90 p-6 sm:p-8 backdrop-blur-md hover:border-purple-500/40 transition-colors shadow-xl">
+                  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-white/10">
+                    <div class="flex flex-col">
+                      <div class="flex items-center gap-2 flex-wrap">
+                        <h3 class="text-xl sm:text-2xl font-bold uppercase text-white tracking-wide">Full Stack &amp; PHP Laravel Developer</h3>
+                        <span class="flex items-center gap-1 text-xs text-[#D7E2EA]/50 font-mono">
+                          <svg class="w-3 h-3 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                          2+ Years Experience
+                        </span>
+                      </div>
+                      <span class="text-sm sm:text-base font-medium text-purple-300 mt-0.5">PHP • Laravel • Node.js • MySQL • REST APIs</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/15 bg-white/5 text-xs font-mono text-[#D7E2EA]/80">
+                        <svg class="w-3.5 h-3.5 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                        <span>2024 – Present</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="pt-4 flex flex-col gap-3">
+                    <p class="text-[#D7E2EA]/85 text-xs sm:text-sm font-light leading-relaxed">
+                      Building scalable web applications, RESTful APIs, role-based admin panels, and database-driven systems with Laravel, PHP, Node.js, and MySQL.
+                    </p>
+                    <ul class="space-y-1.5 pt-1">
+                      <li class="flex items-start gap-2 text-xs sm:text-sm text-[#D7E2EA]/70">
+                        <svg class="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        <span>Engineered authentication systems, role &amp; permission management, and secure REST APIs following Laravel best practices.</span>
+                      </li>
+                      <li class="flex items-start gap-2 text-xs sm:text-sm text-[#D7E2EA]/70">
+                        <svg class="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        <span>Built dynamic Blade views enhanced with JavaScript, jQuery, and AJAX for seamless interactive dashboards and form validations.</span>
+                      </li>
+                      <li class="flex items-start gap-2 text-xs sm:text-sm text-[#D7E2EA]/70">
+                        <svg class="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        <span>Optimized relational MySQL database schemas, CRUD modules, and third-party API integrations for speed and maintainability.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Experience 02 -->
+              <div class="relative reveal-el" style="--reveal-y: 30px; --reveal-delay: 0.12s;">
+                <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-[#0C0C0C] border-2 border-purple-500 flex items-center justify-center"></div>
+                <div class="rounded-3xl border border-white/10 bg-[#121212]/90 p-6 sm:p-8 backdrop-blur-md hover:border-purple-500/40 transition-colors shadow-xl">
+                  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-white/10">
+                    <div class="flex flex-col">
+                      <div class="flex items-center gap-2 flex-wrap">
+                        <h3 class="text-xl sm:text-2xl font-bold uppercase text-white tracking-wide">Backend &amp; Web Developer</h3>
+                        <span class="flex items-center gap-1 text-xs text-[#D7E2EA]/50 font-mono">
+                          <svg class="w-3 h-3 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                          PHP • MySQL • Blade • jQuery
+                        </span>
+                      </div>
+                      <span class="text-sm sm:text-base font-medium text-purple-300 mt-0.5">Database-Driven Web Portals &amp; Admin Systems</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/15 bg-white/5 text-xs font-mono text-[#D7E2EA]/80">
+                        <svg class="w-3.5 h-3.5 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                        <span>2023 – 2024</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="pt-4 flex flex-col gap-3">
+                    <p class="text-[#D7E2EA]/85 text-xs sm:text-sm font-light leading-relaxed">
+                      Developed responsive web applications, custom admin dashboards, CRUD workflows, and API integrations with PHP, Laravel, JavaScript, and MySQL.
+                    </p>
+                    <ul class="space-y-1.5 pt-1">
+                      <li class="flex items-start gap-2 text-xs sm:text-sm text-[#D7E2EA]/70">
+                        <svg class="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        <span>Implemented responsive frontend layouts, client/server form validations, and AJAX-powered data tables.</span>
+                      </li>
+                      <li class="flex items-start gap-2 text-xs sm:text-sm text-[#D7E2EA]/70">
+                        <svg class="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        <span>Delivered clean, modular PHP &amp; Laravel codebases focused on security, stability, and maintainable architecture.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================================================
+             SELECTED PROJECTS (STICKY STACKING CARDS)
+        ========================================================== -->
+        <section id="projects" class="bg-[#0C0C0C] rounded-t-[32px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-8 sm:-mt-12 md:-mt-14 relative px-3 sm:px-8 md:px-10 pt-14 sm:pt-20 pb-20 sm:pb-32">
+          <div class="relative z-10 w-full text-center mb-10 sm:mb-20 md:mb-24 reveal-el" style="--reveal-y: 40px;">
+            <h2 class="hero-heading font-black uppercase text-center leading-none tracking-tight text-[clamp(2.2rem,10vw,140px)]">
+              Selected Projects
+            </h2>
+          </div>
+
+          <div id="projects-stack" class="w-full max-w-6xl mx-auto flex flex-col relative z-10 pb-12 sm:pb-20"></div>
+        </section>
+
+        <!-- =========================================================
+             CASE STUDIES (300VH HORIZONTAL SCROLL EXPERIENCE)
+        ========================================================== -->
+        <section id="case-study" class="relative h-[300vh] bg-[#0C0C0C] border-t border-white/10">
+          <div class="sticky top-0 h-[100svh] sm:h-screen w-screen overflow-hidden flex flex-col justify-between z-10">
+            <!-- Top Status Bar -->
+            <div class="w-full flex items-center justify-between px-4 sm:px-12 pt-4 sm:pt-7 z-30 pointer-events-none gap-2">
+              <div class="flex flex-col">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse shrink-0"></span>
+                  <span class="text-[10px] sm:text-sm font-semibold tracking-widest text-[#D7E2EA]/80 uppercase font-mono">
+                    // Building Real-World Digital Products
+                  </span>
+                </div>
+                <span class="text-[11px] sm:text-xs text-[#D7E2EA]/50 hidden md:inline-block font-light">
+                  Case Studies: Laravel Backends, SaaS Portals &amp; Scalable APIs
+                </span>
+              </div>
+
+              <div class="flex items-center gap-4 shrink-0">
+                <span class="text-[11px] sm:text-sm uppercase tracking-widest text-[#D7E2EA]/60 font-mono">
+                  Slide <span id="case-slide-num" class="text-white font-bold">01</span> / 03
+                </span>
+                <div class="hidden sm:flex items-center gap-1.5 text-xs uppercase tracking-widest text-[#D7E2EA]/40">
+                  <span>Scroll to explore</span>
+                  <svg class="w-3.5 h-3.5 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Horizontal Track -->
+            <div id="case-track" class="relative z-10 flex h-[calc(100svh-120px)] sm:h-[calc(100vh-160px)] w-[300vw] will-change-transform"></div>
+
+            <!-- Bottom Progress Bar -->
+            <div class="flex w-full px-4 sm:px-12 pb-4 sm:pb-7 flex-col gap-1.5 sm:gap-2 z-30">
+              <div class="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+                <div
+                  id="case-progress-bar"
+                  class="h-full bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 rounded-full"
+                  style="transform: scaleX(0); transform-origin: left;"
+                ></div>
+              </div>
+              <div class="flex justify-between items-center text-[9px] sm:text-xs font-mono text-[#D7E2EA]/50 uppercase tracking-wider sm:tracking-widest gap-2">
+                <span class="truncate">01 // Laravel CRM</span>
+                <span class="truncate">02 // E-Commerce</span>
+                <span class="truncate">03 // Payroll API</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Cursor Flair Container (Active below #about) -->
+        <div id="cursor-flair-layer" class="fixed inset-0 overflow-hidden pointer-events-none z-50" aria-hidden="true"></div>
+
+        <!-- =========================================================
+             CONTACT & FOOTER
+        ========================================================== -->
+        <footer id="contact" class="bg-[#0C0C0C] border-t border-white/10 px-6 md:px-12 py-16 sm:py-20 relative">
+          <div class="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+            <div class="flex flex-col gap-2 reveal-el" style="--reveal-y: 20px;">
+              <span class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-purple-400 font-mono">// Get In Touch</span>
+              <h3 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white">
+                Let's build something great
+              </h3>
+              <p class="text-[#D7E2EA]/75 text-sm sm:text-base font-light max-w-lg leading-relaxed">
+                I'm open to Full Stack &amp; PHP Laravel opportunities, freelance projects, and product collaborations where clean backend architecture meets modern UI.
+              </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center gap-4 reveal-el" style="--reveal-y: 20px; --reveal-delay: 0.15s;">
+              <a href="https://wa.me/917464946549?text=Hi%20Saurav%2C%20I%27d%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="inline-block no-underline">
+                <button
+                  type="button"
+                  class="cta-gradient-btn rounded-full px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base text-white font-medium uppercase tracking-widest cursor-pointer select-none"
+                >
+                  Let's Connect
+                </button>
+              </a>
+
+              <button
+                id="back-to-top-btn"
+                type="button"
+                title="Back to Top"
+                class="p-3.5 rounded-full border border-white/20 text-[#D7E2EA] hover:bg-white/10 transition-colors cursor-pointer"
+              >
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m5 12 7-7 7 7"></path>
+                  <path d="M12 19V5"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="relative z-10 max-w-6xl mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-[#D7E2EA]/50 font-light">
+            <p>&copy; <span id="copyright-year">2026</span> Saurav Prajapati — Full Stack &amp; PHP Laravel Developer. All rights reserved.</p>
+            <div class="flex flex-wrap items-center justify-center gap-5 sm:gap-6">
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/saurav-prajapati-developer/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                <span>LinkedIn</span>
+              </a>
+              <a href="mailto:saurav7464skb@gmail.com" class="hover:text-white transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <span>saurav7464skb@gmail.com</span>
+              </a>
+              <a href="tel:+917464946549" class="hover:text-white transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>+91 7464946549</span>
+              </a>
+              <a href="https://wa.me/917464946549?text=Hi%20Saurav%2C%20I%27d%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

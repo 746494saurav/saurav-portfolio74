@@ -1,0 +1,426 @@
+/* Custom styles complementing Tailwind CSS — Dark Studio Portfolio */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: #0c0c0c;
+  color: #d7e2ea;
+  font-family: 'Kanit', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+::selection {
+  background-color: rgba(147, 51, 234, 0.35);
+  color: #ffffff;
+}
+
+.font-kanit {
+  font-family: 'Kanit', sans-serif;
+}
+
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Signature Gradient CTA Button */
+.cta-gradient-btn {
+  background: linear-gradient(123deg, #18011f 7%, #b600a8 37%, #7621b0 72%, #be4c00 100%);
+  box-shadow: 0px 4px 4px rgba(181, 1, 167, 0.25), 4px 4px 12px #7721b1 inset;
+  outline: 2px solid #ffffff;
+  outline-offset: -3px;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.cta-gradient-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 24px rgba(182, 0, 168, 0.55), 4px 4px 12px #7721b1 inset;
+}
+
+.cta-gradient-btn:active {
+  transform: scale(0.96);
+}
+
+/* Secondary Outline Pill Buttons */
+.pill-outline-btn {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.pill-outline-btn:hover {
+  transform: scale(1.04);
+}
+
+.pill-outline-btn:active {
+  transform: scale(0.96);
+}
+
+/* Reveal Animations */
+.reveal-el {
+  opacity: 0;
+  transform: translate3d(var(--reveal-x, 0px), var(--reveal-y, 30px), 0);
+  transition: opacity 0.75s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.75s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.reveal-el.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Character-by-character scroll reveal */
+.char-reveal-span {
+  opacity: 0.2;
+  transition: opacity 0.15s linear;
+}
+
+/* About Cursor Flair */
+.about-cursor-flair {
+  opacity: 0;
+  will-change: transform, opacity;
+  border: 1px solid;
+  border-radius: 9999px;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: grid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+@keyframes about-flair {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.15) rotate(var(--flair-rotation, 15deg));
+  }
+  32% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(var(--flair-rotation, 15deg));
+    animation-timing-function: cubic-bezier(0.5, 0, 0.75, 0.3);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, calc(120vh - 50%)) scale(0.65) rotate(var(--flair-rotation, 15deg));
+  }
+}
+
+/* Floating decorative objects */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(4deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float-slow 7.5s ease-in-out 1.5s infinite;
+}
+
+/* Scrollbar hiding utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Sticky stack cards smooth scale */
+.stack-card-inner {
+  transform-origin: top center;
+  will-change: transform;
+  transition: transform 0.08s linear;
+}
+
+/* Mockup browser/dashboard preview styling */
+.mockup-grid-bg {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Seamless dark-studio fade for portrait photo */
+.hero-portrait-mask {
+  -webkit-mask-image: radial-gradient(ellipse 76% 84% at 50% 44%, #000 58%, rgba(0, 0, 0, 0.6) 78%, transparent 100%);
+  mask-image: radial-gradient(ellipse 76% 84% at 50% 44%, #000 58%, rgba(0, 0, 0, 0.6) 78%, transparent 100%);
+}
+
+/* Ambient Floating PHP & Laravel Keywords in Background Air */
+.ambient-keyword {
+  position: absolute;
+  bottom: -50px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(192, 132, 252, 0.42);
+  background: rgba(24, 16, 40, 0.55);
+  color: rgba(233, 213, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.22);
+  backdrop-filter: blur(4px);
+  will-change: transform, opacity;
+  animation: float-keyword-air var(--kw-duration, 20s) linear infinite;
+  animation-delay: var(--kw-delay, 0s);
+}
+
+@keyframes float-keyword-air {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--kw-rot-start, -4deg));
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--kw-opacity, 0.52);
+  }
+  50% {
+    transform: translate3d(var(--kw-sway, 24px), -55vh, 0) rotate(var(--kw-rot-mid, 4deg));
+    opacity: var(--kw-opacity, 0.52);
+  }
+  90% {
+    opacity: var(--kw-opacity, 0.52);
+  }
+  100% {
+    transform: translate3d(calc(var(--kw-sway, 24px) * -0.6), -115vh, 0) rotate(var(--kw-rot-end, -3deg));
+    opacity: 0;
+  }
+}
+
+html[data-theme="light"] .ambient-keyword {
+  border-color: rgba(126, 34, 206, 0.35);
+  background: rgba(255, 255, 255, 0.78);
+  color: rgba(107, 33, 168, 0.92);
+  box-shadow: 0 4px 16px rgba(126, 34, 206, 0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-keyword {
+    animation: none !important;
+    opacity: 0.45;
+  }
+}
+
+/* Smooth theme transitions */
+body,
+section,
+footer,
+.stack-card-inner {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ==========================================================================
+   LIGHT THEME OVERRIDES (html[data-theme="light"])
+   ========================================================================== */
+html[data-theme="light"],
+html[data-theme="light"] body,
+html[data-theme="light"] #app {
+  background-color: #f4f6f9 !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] section:not(#services),
+html[data-theme="light"] footer#contact {
+  background-color: #f4f6f9 !important;
+  color: #0f172a !important;
+}
+
+/* Keep alternating contrast: "What I Do" flips to deep dark in Light Mode */
+html[data-theme="light"] #services {
+  background-color: #0c0c0c !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="light"] #services h2,
+html[data-theme="light"] #services h3,
+html[data-theme="light"] #services p,
+html[data-theme="light"] #services .font-black {
+  color: #f8fafc !important;
+}
+
+html[data-theme="light"] #services .border-t,
+html[data-theme="light"] #services .border-b {
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+/* Display Gradient Headings */
+html[data-theme="light"] .hero-heading {
+  background: linear-gradient(180deg, #0f172a 0%, #475569 100%);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Hero portrait studio edge & bottom fade in Light Mode */
+html[data-theme="light"] .hero-bottom-fade {
+  background: linear-gradient(to top, #f4f6f9 0%, rgba(244, 246, 249, 0.85) 45%, transparent 100%) !important;
+}
+
+/* Text colors across Light Mode sections (excluding #services, marquee overlays, dark mockups, CTA button) */
+html[data-theme="light"] nav a,
+html[data-theme="light"] #about p,
+html[data-theme="light"] #about span,
+html[data-theme="light"] #experience p,
+html[data-theme="light"] #experience span,
+html[data-theme="light"] #experience li,
+html[data-theme="light"] #projects span,
+html[data-theme="light"] #projects p,
+html[data-theme="light"] #projects li,
+html[data-theme="light"] #case-study span,
+html[data-theme="light"] #case-study p,
+html[data-theme="light"] #case-study li,
+html[data-theme="light"] footer#contact p,
+html[data-theme="light"] footer#contact a,
+html[data-theme="light"] footer#contact span,
+html[data-theme="light"] main section:first-of-type p {
+  color: #1e293b;
+}
+
+html[data-theme="light"] .text-white:not(.cta-gradient-btn):not(#services *):not(.mockup-grid-bg *):not(#marquee-showcase *) {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .text-purple-400:not(#services *):not(.mockup-grid-bg *):not(#marquee-showcase *),
+html[data-theme="light"] .text-purple-300:not(#services *):not(.mockup-grid-bg *):not(#marquee-showcase *) {
+  color: #7e22ce !important;
+}
+
+/* Cards & Panels in Light Mode */
+html[data-theme="light"] #skills .rounded-2xl,
+html[data-theme="light"] #experience .rounded-3xl,
+html[data-theme="light"] #case-study .rounded-3xl,
+html[data-theme="light"] .stack-card-inner {
+  background-color: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.14) !important;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08) !important;
+}
+
+@media (min-width: 1024px) {
+  html[data-theme="light"] #case-study .rounded-3xl {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+}
+
+html[data-theme="light"] #experience .rounded-full.bg-\[\#0C0C0C\] {
+  background-color: #f4f6f9 !important;
+}
+
+html[data-theme="light"] .border-white\/10,
+html[data-theme="light"] .border-white\/15,
+html[data-theme="light"] .border-white\/20,
+html[data-theme="light"] .border-white\/5,
+html[data-theme="light"] .border-\[\#D7E2EA\],
+html[data-theme="light"] .border-\[\#D7E2EA\]\/15 {
+  border-color: rgba(15, 23, 42, 0.14) !important;
+}
+
+html[data-theme="light"] .pill-outline-btn {
+  border-color: #0f172a !important;
+  color: #0f172a !important;
+  background-color: rgba(15, 23, 42, 0.04) !important;
+}
+
+html[data-theme="light"] .pill-outline-btn:hover {
+  background-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html[data-theme="light"] .bg-white\/5:not(.mockup-grid-bg *):not(#services *),
+html[data-theme="light"] .bg-white\/10:not(.mockup-grid-bg *):not(#services *) {
+  background-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+html[data-theme="light"] .theme-toggle-btn {
+  background-color: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.18) !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] #back-to-top-btn {
+  border-color: rgba(15, 23, 42, 0.25) !important;
+  color: #0f172a !important;
+}
+
+/* Keep dark terminal mockups & marquee card overlays crisp in Light Mode */
+html[data-theme="light"] .mockup-grid-bg {
+  background-color: #0f172a !important;
+  border-color: rgba(15, 23, 42, 0.2) !important;
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .mockup-grid-bg span,
+html[data-theme="light"] .mockup-grid-bg div {
+  color: #e2e8f0;
+}
+
+html[data-theme="light"] #marquee-showcase h4 {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] #marquee-showcase span {
+  color: #c084fc !important;
+}
+
+html[data-theme="light"] #projects .bg-black\/75,
+html[data-theme="light"] #projects .bg-black\/75 * {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .cta-gradient-btn {
+  color: #ffffff !important;
+  outline-color: #ffffff !important;
+}
+
+html[data-theme="light"] #case-study .text-white\/\[0\.03\] {
+  color: rgba(15, 23, 42, 0.04) !important;
+}
+
+html[data-theme="light"] .stack-card-inner h3 {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .about-cursor-flair {
+  color: #6b21a8 !important;
+  background-color: rgba(147, 51, 234, 0.12) !important;
+  border-color: rgba(107, 33, 168, 0.35) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-cursor-flair,
+  .animate-float-slow,
+  .animate-float-delay {
+    animation: none !important;
+  }
+  .reveal-el {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
